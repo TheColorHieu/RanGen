@@ -21,10 +21,10 @@ generateBtn.addEventListener("click", writePassword);
 //creating the function to generate the password 
 function generatePassword() {
 //developing the string password
-
-var password = "";
 var userOption ="";
+var password = "";
 var randomString = "";
+
 
 
 //length of password 
@@ -36,23 +36,18 @@ var passwordLength = prompt("How long would you like your password?");
   var upperCase = confirm("Do you want a Upperrcase?")
   var numbers = confirm("Do you want a Number?")
   var specialChar = confirm("Do you want a Special Character?")
-  console.log(passwordLength);
-  console.log(lowerCase);
-  console.log(upperCase);
-  console.log(numbers);
-  console.log(specialChar);
-//next line helps user know that they need at to say yes to at least one of the conditions
+  
+//showing if the password length is long enough 
 if ( passwordLength <= 8 || passwordLength >= 128){
   alert("Your password is not long enough. Please try again.");
 }
-else if ( upperCase === false && numbers === false && specialChar === false){
+//next line helps user know that they need at to say yes to at least one of the conditions
+else if (lowerCase ===false && upperCase === false && numbers === false && specialChar === false){
   alert("You must choose at least one password criteria")
   var lowerCase = confirm("Do you want a Lowercase?")
   var upperCase = confirm("Do you want a Upperrcase?")
   var numbers = confirm("Do you want a Number?")
   var specialChar = confirm("Do you want a Special Character?")
-
-
 }
 //start of if statements
 if (lowerCase){
@@ -65,19 +60,17 @@ if (numbers){
   userOption += numbersOption;
 }
 if (specialChar){
-  userOption += specialChar;
+  userOption += specialOption;
 }
-
-
 
 
 //for loop to help create the password
-for (let i =password.length; i < length; i++){
+for (let i =0; i < passwordLength; i++){
   randomString += userOption.charAt(Math.floor(Math.random() * userOption.length));
 }
-
 password = randomString;
+//returns password
+return password;
 }
-
 
 }
