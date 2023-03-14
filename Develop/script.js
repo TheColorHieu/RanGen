@@ -23,6 +23,8 @@ function generatePassword() {
 //developing the string password
 
 var password = "";
+var userOption ="";
+var randomString = "";
 
 
 //length of password 
@@ -54,16 +56,16 @@ else if ( upperCase === false && numbers === false && specialChar === false){
 }
 //start of if statements
 if (lowerCase){
-  password += lowerCaseOption;
+  userOption += lowerCaseOption;
 }
 if (upperCase){
-  password += upperCaseOption;
+  userOption += upperCaseOption;
 }
 if (numbers){
-  password += numbersOption;
+  userOption += numbersOption;
 }
 if (specialChar){
-  password += specialChar;
+  userOption += specialChar;
 }
 
 
@@ -71,10 +73,10 @@ if (specialChar){
 
 //for loop to help create the password
 for (let i =password.length; i < length; i++){
-  password += password.charAt(Math.floor(Math.random() * passwordLength))
+  randomString += userOption.charAt(Math.floor(Math.random() * userOption.length));
 }
 
-return password
+password = randomString;
 }
 
 
